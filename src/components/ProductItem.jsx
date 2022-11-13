@@ -15,7 +15,12 @@ const ProductItem = ({ product }) => {
 
 	return (
 		<div className={styles.ProductItem}>
-			{product.images[0] && <Image src={product?.images[0]} alt={product.title} width={240} height={240} />}
+			<img 
+				src={product.images[0]} 
+				width={240} 
+				height={240} 
+				alt={product.title}
+			/>
 			<div className={styles['product-info']}>
 				<div>
 					<p>${product.price}</p>
@@ -24,11 +29,9 @@ const ProductItem = ({ product }) => {
 				<figure className={styles['more-clickable-area']} onClick={() => handleClick(product)} >
 					{state.cart.includes(product) ? <Image
 						className={styles.disabled, styles['add-to-cart-btn']}
-						width={50}
-						height={50}
 						src={addedToCartImage}
 						alt="added to cart"
-					/> : <Image className={styles['add-to-cart-btn'], styles.pointer} src={addToCartImage} alt="add to cart" />}
+					/> : <img className={styles['add-to-cart-btn'], styles.pointer} src={addToCartImage} alt="add to cart" />}
 				</figure>
 			</div>
 		</div>
