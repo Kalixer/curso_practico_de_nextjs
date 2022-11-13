@@ -24,6 +24,9 @@
 .navbar-left {
 	display: flex;
 }
+.navbar-left img:hover {
+	cursor: pointer;
+}
 .navbar-left ul {
 	margin-left: 12px;
 }

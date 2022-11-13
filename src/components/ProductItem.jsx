@@ -15,7 +15,7 @@ const ProductItem = ({ product }) => {
 
 	return (
 		<div className={styles.ProductItem}>
-			<img 
+			<Image 
 				src={product.images[0]} 
 				width={240} 
 				height={240} 
@@ -31,7 +31,9 @@ const ProductItem = ({ product }) => {
 						className={styles.disabled, styles['add-to-cart-btn']}
 						src={addedToCartImage}
 						alt="added to cart"
-					/> : <img className={styles['add-to-cart-btn'], styles.pointer} src={addToCartImage} alt="add to cart" />}
+						width={50}
+						height={50}
+					/> : <Image className={styles['add-to-cart-btn'], styles.pointer} src={addToCartImage} alt="add to cart" />}
 				</figure>
 			</div>
 		</div>
