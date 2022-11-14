@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React, {useContext} from 'react';
 import OrderItem from '@components/OrderItem';
 import AppContext from '@context/AppContext';
@@ -13,21 +14,26 @@ const Checkout = () => {
 	}
 
 	return (
-		<div className={styles.Checkout}>
-			<div className={styles['Checkout-container']}>
-				<h1 className={styles.title}>My order</h1>
-				<div className={styles['Checkout-content']}>
-					<div className={styles.order}>
-						<p>
-							<span>03.25.21</span>
-							<span>{state.cart.length} articles</span>
-						</p>
-						<p>${sumTotal()}</p>
+		<>
+			<Head>
+				<title>Checkout</title>
+			</Head>
+			<div className={styles.Checkout}>
+				<div className={styles['Checkout-container']}>
+					<h1 className={styles.title}>My order</h1>
+					<div className={styles['Checkout-content']}>
+						<div className={styles.order}>
+							<p>
+								<span>03.25.21</span>
+								<span>{state.cart.length} articles</span>
+							</p>
+							<p>${sumTotal()}</p>
+						</div>
 					</div>
+					<OrderItem />
 				</div>
-				<OrderItem />
 			</div>
-		</div>
+		</>
 	);
 }
 
