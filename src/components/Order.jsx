@@ -4,7 +4,7 @@ import styles from '@styles/Order.module.scss';
 
 const Order = () => {
 	return (
-		<div className={style.Order}>
+		<div className={styles.Order}>
 			<p>
 				<span>03.25.21</span>
 				<span>6 articles</span>
@@ -13,6 +13,6 @@ const Order = () => {
 			<Image src="./icons/flechita.svg" alt="arrow" />
 		</div>
 	);
-}
+};
 
 export default Order;

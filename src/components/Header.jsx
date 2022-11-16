@@ -7,7 +7,7 @@ import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import AppContext from '@context/AppContext';
 import shoppingCart from '@icons/icon_shopping_cart.svg';
-import styles from '@styles/Header.module.scss'
+import styles from '@styles/Header.module.scss';
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
@@ -16,7 +16,7 @@ const Header = () => {
 
 	const handleToggle = () => {
 		setToggle(!toggle);
-	}
+	};
 
 	return (
 		<nav className={styles.nav}>
@@ -64,6 +64,6 @@ const Header = () => {
 			{toggleOrders && <MyOrder />}
 		</nav>
 	);
-}
+};
 
 export default Header;

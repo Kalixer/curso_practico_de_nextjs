@@ -9,9 +9,9 @@ const ProductList = () => {
 	let products = useGetProducts(API);
 	products = products.filter((item)=>{
 		if (item.images.length > 1 && item.images[0] !== '') {
-			return item
+			return item;
 		}
-	})
+	});
 	return (
 		<div className={styles.ProductList} >
 			{products.map(product => (
@@ -19,6 +19,6 @@ const ProductList = () => {
 			))}
 		</div>
 	);
-}
+};
 
 export default ProductList;

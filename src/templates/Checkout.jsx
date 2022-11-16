@@ -4,13 +4,13 @@ import AppContext from '@context/AppContext';
 import styles from '@styles/Checkout.module.scss';
 
 const Checkout = () => {
-	const { state, toggleOrder } = useContext(AppContext);
+	const { state } = useContext(AppContext);
 
 	const sumTotal = () => {
 		const reducer = (accumalator, currentValue) => accumalator + currentValue.price;
 		const sum = state.cart.reduce(reducer, 0);
 		return sum;
-	}
+	};
 
 	return (
 		<div className={styles.Checkout}>
@@ -22,13 +22,13 @@ const Checkout = () => {
 							<span>03.25.22</span>
 							<span>6 articles</span>
 						</p>
-						<p>$0136847</p>
+						<p>${sumTotal()}</p>
 					</div>
 				</div>
 				<OrderItem />
 			</div>
 		</div>
 	);
-}
+};
 
 export default Checkout;
