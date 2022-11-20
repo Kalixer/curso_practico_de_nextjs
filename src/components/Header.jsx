@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Menu from '@components/Menu';
@@ -10,59 +10,65 @@ import shoppingCart from '@icons/icon_shopping_cart.svg';
 import styles from '@styles/Header.module.scss';
 
 const Header = () => {
-	const [toggle, setToggle] = useState(false);
-	const [toggleOrders, setToggleOrders] = useState(false);
-	const { state } = useContext(AppContext);
+	const { state, toggleOrder, toggleMenu } = useContext(AppContext);
+	// const [toggle, setToggle] = useState(false);
+	// const [toggleOrders, setToggleOrders] = useState(false);
+	// const { state } = useContext(AppContext);
 
-	const handleToggle = () => {
-		setToggle(!toggle);
-	};
+	// const handleToggle = () => {
+	// 	setToggle(!toggle);
+	// };
 
 	return (
-		<nav className={styles.nav}>
-			<Image src={menu} alt="menu" className={styles.menu} />
+		<>
+			<nav className={styles.nav}>
+			<Image src={menu.src} alt="menu" className={styles.menu} width={25} height={25}/>
 			<div className={styles['navbar-left']}>
-				<Link href='/'>
-					<Image src={logo} alt="logo" className={styles['nav-logo']} />
+				<Link href='/' passHref>
+					<a href={"/"}>
+						<Image src={logo} alt="logo" className={styles['nav-logo']} />
+					</a>
 				</Link>
 				<ul>
 					<li>
-						<Link href="/">All</Link>
+						<Link href={"/"}>All</Link>
 					</li>
 					<li>
-						<Link href="/">Clothes</Link>
+						<Link href={"/"}>Clothes</Link>
 					</li>
 					<li>
-						<Link href="/">Electronics</Link>
+						<Link href={"/"}>Electronics</Link>
 					</li>
 					<li>
-						<Link href="/">Furnitures</Link>
+						<Link href={"/"}>Furnitures</Link>
 					</li>
 					<li>
-						<Link href="/">Toys</Link>
+						<Link href={"/"}>Toys</Link>
 					</li>
 					<li>
-						<Link href="/">Others</Link>
+						<Link href={"/"}>Others</Link>
 					</li>
 				</ul>
 			</div>
 			<div className={styles['navbar-right']}>
 				<ul>
-					<li className={styles['navbar-email']} onClick={handleToggle}>
+					<li className={(styles['more-clickable-area'], styles['navbar-email'], styles.pointer)} onClick={() => toggleMenu()} role="presentation">
 						platzi@example.com
 					</li>
 					<li
-						className={styles['navbar-shopping-cart']}
-						onClick={() => setToggleOrders(!toggleOrders)}
+						// className={styles['navbar-shopping-cart']}
+						onClick={() => toggleOrder()}
+						role="presentation"
 					>
-						<Image src={shoppingCart} alt="shopping cart" />
+	               		<Image className={(styles['more-clickable-area'], styles.pointer)} src={shoppingCart} alt="shopping cart" />
 						{state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
 					</li>
 				</ul>
 			</div>
-			{toggle && <Menu />}
-			{toggleOrders && <MyOrder />}
+			{state.menuIsOpen && <Menu />}
+			{state.orderIsOpen && <MyOrder />}
 		</nav>
+		</>
 	);
 };
 

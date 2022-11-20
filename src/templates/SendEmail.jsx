@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from '@logos/logo_yard_sale.svg';
 import email from '@icons/email.svg';
 import styles from '@styles/SendEmail.module.scss';
@@ -16,8 +17,8 @@ const SendEmail = () => {
 				</div>
 				<button className={styles['primary-button', 'login-button']}>Login</button>
 				<p className={styles.resend}>
-					<span>Didn't receive the email?</span>
-					<a href="/">Resend</a>
+					<span>{`Didn't receive the email?`}</span>
+					<Link href="/">Resend</Link>
 				</p>
 			</div>
 		</div>

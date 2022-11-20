@@ -15,7 +15,6 @@ module.exports = {
   ],
   rules: {
     'semi': ['error', 'always'],
-    // 'prettier/semi': 0,
     'prettier/prettier': 0
   }
 }
