@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import OrderItem from '@components/OrderItem';
 import AppContext from '@context/AppContext';
 import arrow from '@icons/flechita.svg';
@@ -13,7 +13,7 @@ const MyOrder = () => {
 		const reducer = (accumalator, currentValue) => accumalator + currentValue.price;
 		const sum = state.cart.reduce(reducer, 0);
 		return sum;
-	};
+	}
 
 	return (
 		<aside className={styles.MyOrder}>
@@ -41,6 +41,6 @@ const MyOrder = () => {
 			</div>
 		</aside>
 	);
-};
+}
 
 export default MyOrder;
