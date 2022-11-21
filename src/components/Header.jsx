@@ -11,13 +11,6 @@ import styles from '@styles/Header.module.scss';
 
 const Header = () => {
 	const { state, toggleOrder, toggleMenu } = useContext(AppContext);
-	// const [toggle, setToggle] = useState(false);
-	// const [toggleOrders, setToggleOrders] = useState(false);
-	// const { state } = useContext(AppContext);
-
-	// const handleToggle = () => {
-	// 	setToggle(!toggle);
-	// };
 
 	return (
 		<>
