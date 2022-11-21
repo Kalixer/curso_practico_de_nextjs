@@ -24,6 +24,10 @@
 .navbar-left {
 	display: flex;
 }
+.navbar-left > a {
+	display: flex;
+	align-items: center;
+}
 .navbar-left img:hover {
 	cursor: pointer;
 }
