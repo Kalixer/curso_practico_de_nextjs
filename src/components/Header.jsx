@@ -15,14 +15,14 @@ const Header = () => {
 	return (
 		<>
 			<nav className={styles.Nav}>
-				<img src={menu.src} alt="menu" className={styles.menu} />
+				<Image src={menu} alt="menu" className={styles.menu} />
 				<div className={styles['navbar-left']}>
 					<Link href="/" passHref>
 						<Image src={logo} alt="logo" className={styles['nav-logo']} />
 					</Link>
 					<ul>
 						<li>
-							<Link href="/">Linkll</Link>
+							<Link href="/">All</Link>
 						</li>
 						<li>
 							<Link href="/">Clothes</Link>
