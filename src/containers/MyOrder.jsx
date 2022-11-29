@@ -35,9 +35,9 @@ const MyOrder = () => {
 						<p>${sumTotal()}</p>
 					</div>
 					<Link className={styles['primary-button']} href="/checkout">
-						<a className={styles['primary-button']}>
+						<div className={styles['primary-button']} href="/checkout">
 							Checkout
-						</a> 
+						</div> 
 					</Link>
 				</div>
 			</div>
