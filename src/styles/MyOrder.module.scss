@@ -79,6 +79,10 @@
   font-size: $--md;
   font-weight: bold;
   height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 @media (max-width: 640px) {
   .MyOrder {
