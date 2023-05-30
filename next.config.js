@@ -9,7 +9,7 @@ const withPWA = require('next-pwa')({
 module.exports = withPWA({
   reactStrictMode: true,
   images: {
-    domains: ['api.lorem.space', 'placeimg.com'],
+    domains: ['api.lorem.space', 'placeimg.com', 'picsum.photos'],
   }
 })
 
